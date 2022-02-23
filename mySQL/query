@@ -1,0 +1,7 @@
+use world;
+select * from country;
+select count(*) from country where IndepYear >=1900;
+select sum(Population) from country where LifeExpectancy >=75;
+
+select Name, Population/SurfaceArea as 'Desity%' from country order by 2 desc limit 10;
+select Name, max(SurfaceArea) as 'Largest%' from country;
