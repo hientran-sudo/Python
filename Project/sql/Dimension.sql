@@ -21,7 +21,7 @@ GO
 
 CREATE TABLE Dimension.SourceName (   
 	sourcekey int NOT NULL,
-	source_name nvarchar(200)  NOT NULL,
+	source_name nvarchar(500)  NOT NULL,
     CONSTRAINT PK_Source PRIMARY KEY CLUSTERED (
         sourcekey ASC
     )
@@ -39,7 +39,7 @@ GO
 
 CREATE TABLE Dimension.Website (   
 	websitekey int NOT NULL,
-	source_website nvarchar(200)  NOT NULL,
+	source_website nvarchar(500)  NOT NULL,
     CONSTRAINT PK_Website PRIMARY KEY CLUSTERED (
         websitekey ASC
     )
