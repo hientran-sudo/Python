@@ -20,9 +20,7 @@ CREATE TABLE Fact.Vaccinations (
 	people_vaccinated_per_hundred decimal(5,2),
 	people_fully_vaccinated_per_hundred decimal(5,2),
 	daily_vaccinations_per_million int,
-	vaccines nvarchar(100) NOT NULL,
-	source_name nvarchar(100) NOT NULL,
-	source_website nvarchar(100) NOT NULL,
+	
 
     CONSTRAINT PK_Orders PRIMARY KEY CLUSTERED (
         VaccinationID ASC
