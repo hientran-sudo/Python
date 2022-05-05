@@ -4,11 +4,9 @@ GO
 DROP TABLE Fact.Vaccinations;
 CREATE TABLE Fact.Vaccinations (
     VaccinationID int IDENTITY (1,1) NOT NULL,
-    iso_code nvarchar(5) NOT NULL,
+    iso_code nvarchar(20) NOT NULL,
 	datekey int NOT NULL,
 	vaccinekey int NOT NULL,
-	sourcekey int NOT NULL,
-	websitekey int NOT NULL,
 	
     
 	total_vaccinations int,
@@ -20,7 +18,7 @@ CREATE TABLE Fact.Vaccinations (
 	people_vaccinated_per_hundred decimal(5,2),
 	people_fully_vaccinated_per_hundred decimal(5,2),
 	daily_vaccinations_per_million int,
-	
+
 
     CONSTRAINT PK_Orders PRIMARY KEY CLUSTERED (
         VaccinationID ASC
@@ -49,17 +47,4 @@ GO
 ALTER TABLE Fact.Vaccinations CHECK CONSTRAINT FK_Fact_Vaccinations_vaccinekey_Dimension_Vaccine;
 GO
 --
-ALTER TABLE Fact.Vaccinations WITH CHECK ADD CONSTRAINT FK_Fact_Vaccinations_sourcekey_Dimension_SourceName FOREIGN KEY(sourcekey)
-REFERENCES Dimension.SourceName (sourcekey);
-GO
-
-ALTER TABLE Fact.Vaccinations CHECK CONSTRAINT FK_Fact_Vaccinations_sourcekey_Dimension_SourceName;
-GO
---
-ALTER TABLE Fact.Vaccinations WITH CHECK ADD CONSTRAINT FK_Fact_Vaccinations_websitekey_Dimension_Website FOREIGN KEY(websitekey)
-REFERENCES Dimension.Website (websitekey);
-GO
-
-ALTER TABLE Fact.Vaccinations CHECK CONSTRAINT FK_Fact_Vaccinations_websitekey_Dimension_Website;
-GO
 

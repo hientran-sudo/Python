@@ -1,9 +1,14 @@
 USE Vaccination;
 GO
+DROP TABLE Dimension.Country;
+DROP TABLE Dimension.Date;
+DROP TABLE Dimension.SourceName;
+DROP TABLE Dimension.Website;
+DROP TABLE Dimension.Vaccine;
 
 CREATE TABLE Dimension.Country (   
-	iso_code nvarchar(5) NOT NULL,
-	country  nvarchar(50) NOT NULL,
+	iso_code nvarchar(20) NOT NULL,
+	country  nvarchar(100) NOT NULL,
     CONSTRAINT PK_Code PRIMARY KEY CLUSTERED (
         iso_code ASC
     )
@@ -30,7 +35,7 @@ GO
 
 CREATE TABLE Dimension.Vaccine (   
 	vaccinekey int NOT NULL,
-	vaccine nvarchar(50)  NOT NULL,
+	vaccine nvarchar(100)  NOT NULL,
     CONSTRAINT PK_Vaccine PRIMARY KEY CLUSTERED (
         vaccinekey ASC
     )
